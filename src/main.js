@@ -8,13 +8,32 @@ const mapSize = {
 
 const sizeTile = 32;
 
-const image = new Image();
-image.src = "https://github.com/NachoKai/catanzaro/blob/gh-pages/img/floor.png?raw=true";
+const urlTile = "https://i.imgur.com/fqG34pO.png";
+const urlCharacter = "https://i.imgur.com/ucwvhlh.png";
 
-image.onload = function() {
+function loadImage(src) {
+    return new Promise((resolve, reject) => {
+        const image = new Image();
+        image.src = src;
+
+        image.onload = () => {
+            resolve(image);
+        };
+        image.onerror = reject;
+    });
+}
+
+renderMap();
+
+async function renderMap() {
+    const imageTile = await loadImage(urlTile);
+    const imageCharacter = await loadImage(urlCharacter);
+
     for (let y = 0; y <= mapSize.y; y++) {
         for (let x = 0; x <= mapSize.x; x++) {
-            context.drawImage(image, x * sizeTile, y * sizeTile);
+            context.drawImage(imageTile, x * sizeTile, y * sizeTile);
         }
     }
-};
+
+    context.drawImage(imageCharacter, 100, 100);
+}
