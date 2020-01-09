@@ -9,7 +9,7 @@ const mapSize = {
 const sizeTile = 32;
 
 const image = new Image();
-image.src = "https://i.imgur.com/fqG34pO.png";
+image.src = "https://github.com/NachoKai/catanzaro/blob/gh-pages/img/floor.png?raw=true";
 
 image.onload = function() {
     for (let y = 0; y <= mapSize.y; y++) {
