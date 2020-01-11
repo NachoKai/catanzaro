@@ -49,16 +49,16 @@ class Engine {
 
     async loadImages() {
         for (let nameUrl in this.urls) {
-            const url = this.urls[nameUrl];
-            const imageLoaded = await this.loadImage(url);
+            const url = this.urls[nameUrl],
+                imageLoaded = await this.loadImage(url)
             this.images[nameUrl] = imageLoaded;
         }
     }
 
     async renderMap() {
         // https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages
-        const response = await fetch("https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/city.json");
-        const result = await response.json();
+        const response = await fetch("https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/city.json"),
+            result = await response.json();
         for (let y = 0; y <= this.mapSize.y - 1; y++) {
             for (let x = 0; x <= this.mapSize.x - 1; x++) {
                 const tile = result[y][x];
@@ -72,8 +72,8 @@ class Engine {
     }
 
     async renderEnvironment() {
-        const response = await fetch("https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/city.json");
-        const result = await response.json();
+        const response = await fetch("https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/city.json"),
+            result = await response.json();
 
         for (let y = 0; y <= this.mapSize.y - 1; y++) {
             for (let x = 0; x <= this.mapSize.x - 1; x++) {
@@ -141,11 +141,11 @@ class Engine {
     }
 }
 
-const background = document.getElementById("background");
-const foreground = document.getElementById("foreground");
-const context = {
-    background: background.getContext("2d"),
-    foreground: foreground.getContext("2d")
-};
-const engine = new Engine(context);
+const background = document.getElementById("background"),
+    foreground = document.getElementById("foreground"),
+    context = {
+        background: background.getContext("2d"),
+        foreground: foreground.getContext("2d")
+    },
+    engine = new Engine(context)
 engine.initialize();
