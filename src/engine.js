@@ -28,9 +28,7 @@ class Engine {
         this.images = {};
     }
 
-    // todas las funciones y procesos que nuestro juego tiene que correr para iniciarse
     async initialize() {
-        //siendo loadImages una función async, gracias al await podemos esperar que se descarguen las imágenes para recién pasar a la siguiente función
         await this.loadImages();
         await this.renderMap();
         this.renderEnvironment();
@@ -38,7 +36,6 @@ class Engine {
         this.initializeKeys();
     }
 
-    // necesitamos tener descargadas todas las imágenes
     loadImage(src) {
         return new Promise((resolve, reject) => {
             const image = new Image();
@@ -58,9 +55,7 @@ class Engine {
         }
     }
 
-    //renderiza el mapa
     async renderMap() {
-        // descargar el archivo del mapa city.json
         const response = await fetch("https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/city.json");
         const result = await response.json();
         for (let y = 0; y <= this.mapSize.y - 1; y++) {
@@ -75,21 +70,7 @@ class Engine {
         }
     }
 
-    /* todos los assets que queramos cargar en el juego, como árboles, carteles, piedras, etc */
     renderEnvironment() {
-        // const response = await fetch("/maps/city.json");
-        // const result = await response.json();
-        // for (let y = 0; y <= this.mapSize.y - 1; y++) {
-        //     for (let x = 0; x <= this.mapSize.x - 1; x++) {
-        //         const tile = result[y][x];
-        //         this.ctx.background.drawImage(
-        //             this.images[tile.background],
-        //             x * this.sizeTile,
-        //             y * this.sizeTile
-        //         );
-        //     }
-        // }
-
         this.ctx.foreground.drawImage(this.images.tree, 25, 100);
         this.ctx.foreground.drawImage(this.images.poster, 150, 40);
         this.ctx.foreground.font = "9pt Helvetica";
@@ -97,7 +78,6 @@ class Engine {
         this.ctx.foreground.fillText("Welcome to my Square!", 160, 70);
     }
 
-    //renderiza al personaje
     renderCharacter() {
         this.ctx.foreground.drawImage(
             this.images.character,
@@ -106,7 +86,6 @@ class Engine {
         );
     }
 
-    // limpia el canvas
     clearCanvas() {
         this.ctx.foreground.clearRect(
             0,
@@ -116,7 +95,6 @@ class Engine {
         );
     }
 
-    //vamos a limpiar y renderizar todo cada vez que nos movamos
     initializeKeys() {
         document.addEventListener("keydown", e => {
             switch (e.keyCode) {
@@ -136,7 +114,6 @@ class Engine {
                     break;
             }
 
-            //limpiamos el canvas, renderizamos el personaje y los assets del ambiente
             this.clearCanvas();
             this.renderCharacter();
             this.renderEnvironment();
