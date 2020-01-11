@@ -121,16 +121,32 @@ class Engine {
         document.addEventListener("keydown", e => {
             switch (e.keyCode) {
                 case this.keys.arrowUp:
-                    this.user.pos.y -= this.sizeTile;
+                    if (this.map[Math.round(this.user.pos.y / this.sizeTile - 2)][Math.round(this.user.pos.x / this.sizeTile)].block) {
+                        this.user.pos.y -= 0
+                    } else {
+                        this.user.pos.y -= this.sizeTile;
+                    }
                     break;
                 case this.keys.arrowDown:
-                    this.user.pos.y += this.sizeTile;
+                    if (this.map[Math.round(this.user.pos.y / this.sizeTile + 2)][Math.round(this.user.pos.x / this.sizeTile)].block) {
+                        this.user.pos.y -= 0
+                    } else {
+                        this.user.pos.y += this.sizeTile;
+                    }
                     break;
                 case this.keys.arrowLeft:
-                    this.user.pos.x -= this.sizeTile;
+                    if (this.map[Math.round(this.user.pos.y / this.sizeTile)][Math.round(this.user.pos.x / this.sizeTile - 1)].block) {
+                        this.user.pos.x -= 0
+                    } else {
+                        this.user.pos.x -= this.sizeTile;
+                    }
                     break;
                 case this.keys.arrowRight:
-                    this.user.pos.x += this.sizeTile;
+                    if (this.map[Math.round(this.user.pos.y / this.sizeTile)][Math.round(this.user.pos.x / this.sizeTile + 1)].block) {
+                        this.user.pos.x -= 0
+                    } else {
+                        this.user.pos.x += this.sizeTile;
+                    }
                     break;
                 default:
                     break;
