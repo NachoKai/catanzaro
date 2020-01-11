@@ -79,10 +79,42 @@
     }, {
         "background": "grass",
         "foreground": "poster",
+        "posterText": "Welcome to my Square!",
         "block": false
     }, {
         "background": "grass",
-        "foreground": "poster",
+        "block": false
+    }, {
+        "background": "grass",
+        "block": false
+    }, {
+        "background": "grass",
+        "block": false
+    }, {
+        "background": "grass",
+        "block": false
+    }],
+    [{
+        "background": "grass",
+        "block": false
+    }, {
+        "background": "grass",
+        "foreground": "tree",
+        "block": false
+    }, {
+        "background": "grass",
+        "block": false
+    }, {
+        "background": "grass",
+        "block": false
+    }, {
+        "background": "grass",
+        "block": false
+    }, {
+        "background": "grass",
+        "block": false
+    }, {
+        "background": "grass",
         "block": false
     }, {
         "background": "grass",
@@ -108,39 +140,6 @@
         "block": false
     }, {
         "background": "grass",
-        "block": false
-    }, {
-        "background": "grass",
-        "block": false
-    }, {
-        "background": "grass",
-        "block": false
-    }, {
-        "background": "grass",
-        "block": false
-    }, {
-        "background": "grass",
-        "block": false
-    }, {
-        "background": "grass",
-        "block": false
-    }],
-    [{
-        "background": "grass",
-        "block": false
-    }, {
-        "background": "grass",
-        "block": false
-    }, {
-        "background": "grass",
-        "block": false
-    }, {
-        "background": "grass",
-        "foreground": "tree",
-        "block": false
-    }, {
-        "background": "grass",
-        "foreground": "tree",
         "block": false
     }, {
         "background": "grass",

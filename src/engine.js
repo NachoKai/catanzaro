@@ -57,7 +57,7 @@ class Engine {
 
     async renderMap() {
         // https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages
-        const response = await fetch("https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/city.json");
+        const response = await fetch("/maps/city.json");
         const result = await response.json();
         for (let y = 0; y <= this.mapSize.y - 1; y++) {
             for (let x = 0; x <= this.mapSize.x - 1; x++) {
@@ -71,12 +71,31 @@ class Engine {
         }
     }
 
-    renderEnvironment() {
-        this.ctx.foreground.drawImage(this.images.tree, 25, 100);
-        this.ctx.foreground.drawImage(this.images.poster, 150, 40);
-        this.ctx.foreground.font = "9pt Helvetica";
-        this.ctx.foreground.fillStyle = "white";
-        this.ctx.foreground.fillText("Welcome to my Square!", 160, 70);
+    async renderEnvironment() {
+        const response = await fetch("/maps/city.json");
+        const result = await response.json();
+
+        for (let y = 0; y <= this.mapSize.y - 1; y++) {
+            for (let x = 0; x <= this.mapSize.x - 1; x++) {
+                const tile = result[y][x];
+                if (tile.hasOwnProperty('foreground')) {
+                    this.ctx.foreground.drawImage(
+                        this.images[tile.foreground],
+                        x * this.sizeTile,
+                        y * this.sizeTile
+                    )
+                    if (tile.hasOwnProperty('posterText')) {
+                        this.ctx.foreground.font = "9pt Helvetica";
+                        this.ctx.foreground.fillStyle = "white";
+                        this.ctx.foreground.fillText(
+                            tile.posterText,
+                            x * this.sizeTile + 10,
+                            y * this.sizeTile + 30
+                        );
+                    }
+                }
+            }
+        }
     }
 
     renderCharacter() {
