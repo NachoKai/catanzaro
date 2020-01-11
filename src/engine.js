@@ -13,8 +13,8 @@ class Engine {
         };
         this.user = {
             pos: {
-                x: 100,
-                y: 100
+                x: 170,
+                y: 130
             }
         };
         this.sizeTile = 32;
@@ -77,7 +77,7 @@ class Engine {
 
     /* todos los assets que queramos cargar en el juego, como árboles, carteles, piedras, etc */
     renderEnvironment() {
-        this.ctx.foreground.drawImage(this.images.tree, 25, 150);
+        this.ctx.foreground.drawImage(this.images.tree, 25, 100);
         this.ctx.foreground.drawImage(this.images.poster, 150, 40);
         this.ctx.foreground.font = "9pt Helvetica";
         this.ctx.foreground.fillStyle = "white";
