@@ -6,17 +6,17 @@ class Engine {
             arrowDown: 40,
             arrowLeft: 37,
             arrowRight: 39
-        }
+        };
         this.mapSize = {
             x: 10,
             y: 10
-        }
+        };
         this.user = {
             pos: {
                 x: 10,
                 y: 10
             }
-        }
+        };
         this.sizeTile = 32;
         this.urls = {
             grass: "https://i.imgur.com/fqG34pO.png",
@@ -24,12 +24,14 @@ class Engine {
             poster: "https://i.imgur.com/NXIjxr8.png",
             tree: "https://i.imgur.com/wIK2b9P.png",
             sea: "https://i.imgur.com/4BZGw0M.png"
-        }
-        this.images = {}
+        };
+        this.images = {};
+        this.map = [];
     }
 
     async initialize() {
         await this.loadImages();
+        await this.loadMap();
         await this.renderMap();
         this.renderEnvironment();
         this.renderCharacter();
@@ -47,6 +49,12 @@ class Engine {
         })
     }
 
+    async loadMap() {
+        // https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/city.json
+        const response = await fetch("https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/city.json");
+        this.map = await response.json();
+    }
+
     async loadImages() {
         for (let nameUrl in this.urls) {
             const url = this.urls[nameUrl],
@@ -56,12 +64,9 @@ class Engine {
     }
 
     async renderMap() {
-        // https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages
-        const response = await fetch("https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/city.json"),
-            result = await response.json();
         for (let y = 0; y <= this.mapSize.y - 1; y++) {
             for (let x = 0; x <= this.mapSize.x - 1; x++) {
-                const tile = result[y][x];
+                const tile = this.map[y][x];
                 this.ctx.background.drawImage(
                     this.images[tile.background],
                     x * this.sizeTile,
@@ -72,12 +77,9 @@ class Engine {
     }
 
     async renderEnvironment() {
-        const response = await fetch("https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/city.json"),
-            result = await response.json();
-
         for (let y = 0; y <= this.mapSize.y - 1; y++) {
             for (let x = 0; x <= this.mapSize.x - 1; x++) {
-                const tile = result[y][x];
+                const tile = this.map[y][x];
                 if (tile.hasOwnProperty('foreground')) {
                     this.ctx.foreground.drawImage(
                         this.images[tile.foreground],
