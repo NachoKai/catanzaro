@@ -13,8 +13,8 @@ class Engine {
         };
         this.user = {
             pos: {
-                x: 170,
-                y: 130
+                x: 10,
+                y: 10
             }
         };
         this.sizeTile = 32;
@@ -61,7 +61,7 @@ class Engine {
     //renderiza el mapa
     async renderMap() {
         // descargar el archivo del mapa city.json
-        const response = await fetch("/maps/city.json");
+        const response = await fetch("https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/city.json");
         const result = await response.json();
         for (let y = 0; y <= this.mapSize.y - 1; y++) {
             for (let x = 0; x <= this.mapSize.x - 1; x++) {
