@@ -56,6 +56,7 @@ class Engine {
     }
 
     async renderMap() {
+        // https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages
         const response = await fetch("https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/city.json");
         const result = await response.json();
         for (let y = 0; y <= this.mapSize.y - 1; y++) {
