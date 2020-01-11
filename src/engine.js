@@ -6,17 +6,17 @@ class Engine {
             arrowDown: 40,
             arrowLeft: 37,
             arrowRight: 39
-        };
+        }
         this.mapSize = {
             x: 10,
             y: 10
-        };
+        }
         this.user = {
             pos: {
                 x: 10,
                 y: 10
             }
-        };
+        }
         this.sizeTile = 32;
         this.urls = {
             grass: "https://i.imgur.com/fqG34pO.png",
@@ -24,8 +24,8 @@ class Engine {
             poster: "https://i.imgur.com/NXIjxr8.png",
             tree: "https://i.imgur.com/wIK2b9P.png",
             sea: "https://i.imgur.com/4BZGw0M.png"
-        };
-        this.images = {};
+        }
+        this.images = {}
     }
 
     async initialize() {
@@ -44,7 +44,7 @@ class Engine {
                 resolve(image);
             };
             image.onerror = reject;
-        });
+        })
     }
 
     async loadImages() {
