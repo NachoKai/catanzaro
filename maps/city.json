@@ -80,7 +80,7 @@
         "background": "grass",
         "foreground": "poster",
         "posterText": "Welcome to my Square!",
-        "block": true
+        "block": false
     }, {
         "background": "grass",
         "block": false
@@ -100,7 +100,7 @@
     }, {
         "background": "grass",
         "foreground": "tree",
-        "block": true
+        "block": false
     }, {
         "background": "grass",
         "block": false
