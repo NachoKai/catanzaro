@@ -121,14 +121,14 @@ class Engine {
         document.addEventListener("keydown", e => {
             switch (e.keyCode) {
                 case this.keys.arrowUp:
-                    if (this.map[Math.round(this.user.pos.y / this.sizeTile - 2)][Math.round(this.user.pos.x / this.sizeTile)].block) {
+                    if (this.map[Math.round(this.user.pos.y / this.sizeTile - 1)][Math.round(this.user.pos.x / this.sizeTile)].block) {
                         this.user.pos.y -= 0
                     } else {
                         this.user.pos.y -= this.sizeTile;
                     }
                     break;
                 case this.keys.arrowDown:
-                    if (this.map[Math.round(this.user.pos.y / this.sizeTile + 2)][Math.round(this.user.pos.x / this.sizeTile)].block) {
+                    if (this.map[Math.round(this.user.pos.y / this.sizeTile + 1)][Math.round(this.user.pos.x / this.sizeTile)].block) {
                         this.user.pos.y -= 0
                     } else {
                         this.user.pos.y += this.sizeTile;
