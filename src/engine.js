@@ -61,7 +61,7 @@ class Engine {
     //renderiza el mapa
     async renderMap() {
         // descargar el archivo del mapa city.json
-        const response = await fetch("/maps/city.json");
+        const response = await fetch("https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/city.json");
         const result = await response.json();
         for (let y = 0; y <= this.mapSize.y - 1; y++) {
             for (let x = 0; x <= this.mapSize.x - 1; x++) {
@@ -76,9 +76,7 @@ class Engine {
     }
 
     /* todos los assets que queramos cargar en el juego, como árboles, carteles, piedras, etc */
-    renderEnvironment() {
-
-        
+    renderEnvironment() {        
         this.ctx.foreground.drawImage(this.images.tree, 25, 100);
         this.ctx.foreground.drawImage(this.images.poster, 150, 40);
         this.ctx.foreground.font = "9pt Helvetica";
