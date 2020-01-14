@@ -76,29 +76,7 @@ class Engine {
         }
     }
 
-    async renderEnvironment() {
-        for (let y = 0; y <= this.mapSize.y - 1; y++) {
-            for (let x = 0; x <= this.mapSize.x - 1; x++) {
-                const tile = this.map[y][x];
-                if (tile.hasOwnProperty('foreground')) {
-                    this.ctx.foreground.drawImage(
-                        this.images[tile.foreground],
-                        x * this.sizeTile,
-                        y * this.sizeTile
-                    )
-                    if (tile.hasOwnProperty('posterText')) {
-                        this.ctx.foreground.font = "9pt Helvetica";
-                        this.ctx.foreground.fillStyle = "white";
-                        this.ctx.foreground.fillText(
-                            tile.posterText,
-                            x * this.sizeTile + 10,
-                            y * this.sizeTile + 30
-                        );
-                    }
-                }
-            }
-        }
-    }
+
 
     renderCharacter() {
         this.ctx.foreground.drawImage(
