@@ -1,15 +1,16 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-}
-
-.canvas {
+  }
+  
+  .canvas {
     width: 320px;
     height: 320px;
     border: 1px solid #ccc;
     position: relative;
-}
-
-#background,
-#foreground {
+  }
+  
+  #background,
+  #foreground {
     position: absolute;
-}
+  }
+  
