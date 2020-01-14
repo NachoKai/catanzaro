@@ -1,23 +1,19 @@
 {
-  "name": "creacion-de-videojuegos-capitulo-3-sandbox-1",
+  "name": "curso-catanzaro",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.html",
+  "description": "•https://damiancatanzaro.com/blog/como-crear-tu-videojuego-desde-0-en-la-web-con-html5-y-javascript-capitulo-1/",
+  "main": "index.js",
   "scripts": {
-    "start": "serve"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codesandbox-app/static-template.git"
+    "url": "git+https://github.com/NachoKai/catanzaro.git"
   },
-  "keywords": [],
-  "author": "Ives van Hoorne",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/codesandbox-app/static-template/issues"
+    "url": "https://github.com/NachoKai/catanzaro/issues"
   },
-  "homepage": "https://github.com/codesandbox-app/static-template#readme",
-  "devDependencies": {
-    "serve": "^11.2.0"
-  }
+  "homepage": "https://github.com/NachoKai/catanzaro#readme"
 }

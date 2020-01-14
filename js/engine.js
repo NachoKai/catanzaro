@@ -91,23 +91,21 @@ class Engine {
         for (let y = 0; y <= this.mapSize.y - 1; y++) {
             for (let x = 0; x <= this.mapSize.x - 1; x++) {
                 const tile = this.map[y][x];
-
-                if (tile.foreground) {
+                if (tile.hasOwnProperty('foreground')) {
                     this.ctx.foreground.drawImage(
                         this.images[tile.foreground],
                         x * this.sizeTile,
                         y * this.sizeTile
-                    );
-                }
-
-                if (tile.text) {
-                    this.ctx.foreground.font = "12pt Helvetica";
-                    this.ctx.foreground.fillStyle = "white";
-                    this.ctx.foreground.fillText(
-                        tile.text,
-                        x * this.sizeTile,
-                        y * this.sizeTile
-                    );
+                    )
+                    if (tile.hasOwnProperty('posterText')) {
+                        this.ctx.foreground.font = "9pt Helvetica";
+                        this.ctx.foreground.fillStyle = "white";
+                        this.ctx.foreground.fillText(
+                            tile.posterText,
+                            x * this.sizeTile + 10,
+                            y * this.sizeTile + 30
+                        );
+                    }
                 }
             }
         }
@@ -135,28 +133,28 @@ class Engine {
             switch (e.keyCode) {
                 case this.keys.arrowUp:
                     if (
-                        !this.map[this.user.pos.y - 1][this.user.pos.x].blocked
+                        !this.map[this.user.pos.y - 1][this.user.pos.x].block
                     ) {
                         this.user.pos.y--;
                     }
                     break;
                 case this.keys.arrowDown:
                     if (
-                        !this.map[this.user.pos.y + 1][this.user.pos.x].blocked
+                        !this.map[this.user.pos.y + 1][this.user.pos.x].block
                     ) {
                         this.user.pos.y++;
                     }
                     break;
                 case this.keys.arrowLeft:
                     if (
-                        !this.map[this.user.pos.y][this.user.pos.x - 1].blocked
+                        !this.map[this.user.pos.y][this.user.pos.x - 1].block
                     ) {
                         this.user.pos.x--;
                     }
                     break;
                 case this.keys.arrowRight:
                     if (
-                        !this.map[this.user.pos.y][this.user.pos.x + 1].blocked
+                        !this.map[this.user.pos.y][this.user.pos.x + 1].block
                     ) {
                         this.user.pos.x++;
                     }
