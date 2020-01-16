@@ -16,8 +16,8 @@ class Engine {
 
         this.user = {
             pos: {
-                x: 3,
-                y: 5
+                x: 1,
+                y: 2
             }
         };
 
@@ -79,9 +79,9 @@ class Engine {
     }
 
     timestamp() {
-        return window.performance && window.performance.now
-            ? window.performance.now()
-            : new Date().getTime();
+        return window.performance && window.performance.now ?
+            window.performance.now() :
+            new Date().getTime();
     }
 
     loadImage(src) {
@@ -186,27 +186,27 @@ class Engine {
                 }
 
                 if (tile.text) {
-                    this.ctx.foreground.font = "12pt Helvetica";
+                    this.ctx.foreground.font = "9pt Helvetica";
                     this.ctx.foreground.fillStyle = "white";
                     this.ctx.foreground.fillText(
                         tile.text,
-                        x * this.sizeTile,
+                        x * this.sizeTile - 20,
                         y * this.sizeTile
                     );
                 }
             }
         }
 
-        this.ctx.foreground.font = "10pt Helvetica";
+        this.ctx.foreground.font = "7pt Helvetica";
         this.ctx.foreground.fillStyle = "white";
-        this.ctx.foreground.fillText(`FPS: ${this.FPS}`, 10, 20);
+        this.ctx.foreground.fillText(`FPS: ${this.FPS}`, 5, 12);
     }
 
     renderCharacter() {
         this.ctx.foreground.drawImage(
             this.images.character,
             this.user.pos.x * this.sizeTile,
-            this.user.pos.y * this.sizeTile - 32
+            this.user.pos.y * this.sizeTile - 20
         );
     }
 
@@ -253,17 +253,17 @@ class Engine {
                 default:
                     break;
             }
-        });
+        })
     }
 }
 
-const background = document.getElementById("background");
-const foreground = document.getElementById("foreground");
+const background = document.getElementById("background")
+const foreground = document.getElementById("foreground")
 
 const context = {
     background: background.getContext("2d"),
     foreground: foreground.getContext("2d")
-};
+}
 
-const engine = new Engine(context);
-engine.initialize();
+const engine = new Engine(context)
+engine.initialize()
