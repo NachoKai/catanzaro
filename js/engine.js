@@ -100,6 +100,7 @@ class Engine {
 
     async loadMap() {
         // https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/
+        // "/maps/city.json"
         const response = await fetch("https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/city.json");
         const result = await response.json();
 
@@ -112,6 +113,7 @@ class Engine {
 
         this.animations = result;
     }
+
 
     async loadImages() {
         for (let nameUrl in this.urls) {
