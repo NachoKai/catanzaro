@@ -29,7 +29,8 @@ class Engine {
             poster: "./images/poster.png",
             tree: "./images/tree.png",
             water: "./images/water.png",
-            fireBall: "./images/fireBall.png"
+            fireBall: "./images/fireBall.png",
+            torch: "./images/torch.png"
         };
 
         this.images = {};

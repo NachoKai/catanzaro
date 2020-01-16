@@ -40,6 +40,20 @@
             "background": "grass"
         },
         {
+            "background": "grass",
+            "animation": "torch"
+        },
+        {
+            "background": "grass",
+            "foreground": "poster"
+        },
+        {
+            "background": "grass"
+        },
+        {
+            "background": "grass"
+        },
+        {
             "background": "grass"
         },
         {
@@ -47,7 +61,27 @@
         },
         {
             "background": "grass",
-            "foreground": "poster"
+            "animation": "torch"
+        }
+    ],
+    [{
+            "background": "grass"
+        },
+        {
+            "background": "grass"
+        },
+        {
+            "background": "grass"
+        },
+        {
+            "background": "grass"
+        },
+        {
+            "background": "grass"
+        },
+        {
+            "background": "grass",
+            "text": "Welcome to my Square!"
         },
         {
             "background": "grass"
@@ -81,8 +115,7 @@
             "background": "grass"
         },
         {
-            "background": "grass",
-            "text": "Welcome to my Square!"
+            "background": "grass"
         },
         {
             "background": "grass"
@@ -130,45 +163,16 @@
             "background": "grass"
         },
         {
-            "background": "grass"
-        },
-        {
-            "background": "grass"
-        },
-        {
-            "background": "grass"
-        },
-        {
-            "background": "grass"
-        },
-        {
-            "background": "grass"
-        },
-        {
-            "background": "grass"
-        },
-        {
-            "background": "grass"
-        },
-        {
-            "background": "grass"
-        },
-        {
-            "background": "grass"
-        }
-    ],
-    [{
-            "background": "grass"
-        },
-        {
-            "background": "grass"
+            "background": "grass",
+            "animation": "fireBall"
         },
         {
             "background": "grass",
             "animation": "fireBall"
         },
         {
-            "background": "grass"
+            "background": "grass",
+            "animation": "fireBall"
         },
         {
             "background": "grass"
