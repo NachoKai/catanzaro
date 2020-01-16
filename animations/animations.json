@@ -108,5 +108,105 @@
                 "height": 85
             }
         ]
+    },
+    "healing": {
+        "speed": 85,
+        "frames": [{
+                "sX": 0,
+                "sY": 0,
+                "width": 145,
+                "height": 145
+            },
+            {
+                "sX": 145,
+                "sY": 0,
+                "width": 145,
+                "height": 145
+            },
+            {
+                "sX": 290,
+                "sY": 0,
+                "width": 145,
+                "height": 145
+            },
+            {
+                "sX": 435,
+                "sY": 0,
+                "width": 145,
+                "height": 145
+            },
+            {
+                "sX": 0,
+                "sY": 145,
+                "width": 145,
+                "height": 145
+            },
+            {
+                "sX": 145,
+                "sY": 145,
+                "width": 145,
+                "height": 145
+            },
+            {
+                "sX": 290,
+                "sY": 145,
+                "width": 145,
+                "height": 145
+            },
+            {
+                "sX": 435,
+                "sY": 145,
+                "width": 145,
+                "height": 145
+            },
+            {
+                "sX": 0,
+                "sY": 290,
+                "width": 145,
+                "height": 145
+            },
+            {
+                "sX": 145,
+                "sY": 290,
+                "width": 145,
+                "height": 145
+            },
+            {
+                "sX": 290,
+                "sY": 290,
+                "width": 145,
+                "height": 145
+            },
+            {
+                "sX": 435,
+                "sY": 290,
+                "width": 145,
+                "height": 145
+            },
+            {
+                "sX": 0,
+                "sY": 435,
+                "width": 145,
+                "height": 145
+            },
+            {
+                "sX": 145,
+                "sY": 435,
+                "width": 145,
+                "height": 145
+            },
+            {
+                "sX": 290,
+                "sY": 435,
+                "width": 145,
+                "height": 145
+            },
+            {
+                "sX": 435,
+                "sY": 435,
+                "width": 145,
+                "height": 145
+            }
+        ]
     }
 }

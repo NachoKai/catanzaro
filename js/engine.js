@@ -30,7 +30,8 @@ class Engine {
             tree: "./images/tree.png",
             water: "./images/water.png",
             fireBall: "./images/fireBall.png",
-            torch: "./images/torch.png"
+            torch: "./images/torch.png",
+            healing: "./images/healing.png"
         };
 
         this.images = {};
