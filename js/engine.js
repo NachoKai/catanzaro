@@ -99,14 +99,15 @@ class Engine {
     }
 
     async loadMap() {
-        const response = await fetch("/maps/city.json");
+        // https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/
+        const response = await fetch("https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/city.json");
         const result = await response.json();
 
         this.map = result;
     }
 
     async loadAnimations() {
-        const response = await fetch("/animations/animations.json");
+        const response = await fetch("https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/animations/animations.json");
         const result = await response.json();
 
         this.animations = result;
