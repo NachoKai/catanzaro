@@ -209,7 +209,7 @@ class Engine {
             this.images.character,
             this.user.pos.x * this.sizeTile,
             this.user.pos.y * this.sizeTile - 20
-        );
+        )
     }
 
     clearCanvas() {
