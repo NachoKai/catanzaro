@@ -211,7 +211,7 @@ class Engine {
         this.ctx.foreground.drawImage(
             this.images.character,
             this.user.pos.x * this.sizeTile,
-            this.user.pos.y * this.sizeTile - 20
+            this.user.pos.y * this.sizeTile - 32
         )
     }
 
