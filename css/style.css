@@ -5,8 +5,10 @@ body {
 .canvas {
     width: 320px;
     height: 320px;
-    border: 1px solid #ccc;
-    position: relative;
+    border: 2px solid #ccc;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
 }
 
 #background,
@@ -14,14 +16,3 @@ body {
     position: absolute;
 }
 
-.information {
-    margin-top: 10px;
-}
-
-ul {
-    padding: 0;
-    margin: 0;
-    margin-top: 10px;
-    margin-left: 10px;
-    list-style: none;
-}
