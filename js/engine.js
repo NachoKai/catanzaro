@@ -1,51 +1,72 @@
 class Engine {
     constructor(context) {
         this.ctx = context;
+
         this.keys = {
             arrowUp: 38,
             arrowDown: 40,
             arrowLeft: 37,
             arrowRight: 39
         };
+
         this.mapSize = {
             x: 10,
             y: 10
         };
+
         this.user = {
             pos: {
-                x: 0,
-                y: 1
+                x: 3,
+                y: 5
             }
         };
+
         this.sizeTile = 32;
+
         this.urls = {
             grass: "./images/grass.png",
             character: "./images/character.png",
             poster: "./images/poster.png",
             tree: "./images/tree.png",
-            water: "./images/water.png"
+            water: "./images/water.png",
+            fireBall: "./images/fireBall.png"
         };
+
         this.images = {};
+        this.animations = {};
         this.map = [];
+
         this.FPS = 0;
         this.lFrameTimer = 0;
         this.framesPerSecCounter = 0;
+
+        this.delta = 0;
+        this.lastDelta = 0;
     }
 
     async initialize() {
         await this.loadImages();
         await this.loadMap();
+        await this.loadAnimations();
         await this.renderMap();
+
         this.initializeKeys();
+
         this.loop();
     }
 
     loop = () => {
         this.calculateFPS();
         this.framesPerSecCounter = this.framesPerSecCounter + 1;
+
+        this.delta = this.timestamp() - this.lastDelta;
+        this.lastDelta = this.timestamp();
+
         this.clearCanvas();
         this.renderCharacter();
         this.renderEnvironment();
+        this.renderAnimation();
+
         requestAnimationFrame(this.loop);
     };
 
@@ -58,9 +79,9 @@ class Engine {
     }
 
     timestamp() {
-        return window.performance && window.performance.now ?
-            window.performance.now() :
-            new Date().getTime();
+        return window.performance && window.performance.now
+            ? window.performance.now()
+            : new Date().getTime();
     }
 
     loadImage(src) {
@@ -78,12 +99,21 @@ class Engine {
     async loadMap() {
         const response = await fetch("/maps/city.json");
         const result = await response.json();
+
         this.map = result;
+    }
+
+    async loadAnimations() {
+        const response = await fetch("/animations/animations.json");
+        const result = await response.json();
+
+        this.animations = result;
     }
 
     async loadImages() {
         for (let nameUrl in this.urls) {
             const url = this.urls[nameUrl];
+
             const imageLoaded = await this.loadImage(url);
             this.images[nameUrl] = imageLoaded;
         }
@@ -93,11 +123,51 @@ class Engine {
         for (let y = 0; y <= this.mapSize.y - 1; y++) {
             for (let x = 0; x <= this.mapSize.x - 1; x++) {
                 const tile = this.map[y][x];
+
                 this.ctx.background.drawImage(
                     this.images[tile.background],
                     x * this.sizeTile,
                     y * this.sizeTile
                 );
+            }
+        }
+    }
+
+    renderAnimation() {
+        for (let y = 0; y <= this.mapSize.y - 1; y++) {
+            for (let x = 0; x <= this.mapSize.x - 1; x++) {
+                const tile = this.map[y][x];
+
+                if (tile.animation) {
+                    const animation = this.animations[tile.animation];
+
+                    if (typeof tile.frameFxCounter === "undefined") {
+                        tile.frameFxCounter = 0;
+                    }
+
+                    tile.frameFxCounter += this.delta / animation.speed;
+
+                    let frameFxCounter = Math.floor(tile.frameFxCounter);
+
+                    if (frameFxCounter >= animation.frames.length) {
+                        tile.frameFxCounter = 0;
+                        frameFxCounter = 0;
+                    }
+
+                    const frame = animation.frames[frameFxCounter];
+
+                    this.ctx.foreground.drawImage(
+                        this.images[tile.animation],
+                        frame.sX,
+                        frame.sY,
+                        frame.width,
+                        frame.height,
+                        x * this.sizeTile,
+                        y * this.sizeTile,
+                        frame.width,
+                        frame.height
+                    );
+                }
             }
         }
     }
@@ -115,13 +185,13 @@ class Engine {
                     );
                 }
 
-                if (tile.hasOwnProperty('posterText')) {
-                    this.ctx.foreground.font = "9pt Helvetica";
+                if (tile.text) {
+                    this.ctx.foreground.font = "12pt Helvetica";
                     this.ctx.foreground.fillStyle = "white";
                     this.ctx.foreground.fillText(
-                        tile.posterText,
-                        x * this.sizeTile + 10,
-                        y * this.sizeTile + 30
+                        tile.text,
+                        x * this.sizeTile,
+                        y * this.sizeTile
                     );
                 }
             }
@@ -136,7 +206,7 @@ class Engine {
         this.ctx.foreground.drawImage(
             this.images.character,
             this.user.pos.x * this.sizeTile,
-            this.user.pos.y * this.sizeTile - 20
+            this.user.pos.y * this.sizeTile - 32
         );
     }
 
@@ -183,12 +253,13 @@ class Engine {
                 default:
                     break;
             }
-        })
+        });
     }
 }
 
 const background = document.getElementById("background");
 const foreground = document.getElementById("foreground");
+
 const context = {
     background: background.getContext("2d"),
     foreground: foreground.getContext("2d")

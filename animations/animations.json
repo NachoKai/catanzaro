@@ -1,0 +1,61 @@
+{
+    "fireBall": {
+        "speed": 60,
+        "frames": [
+            {
+                "sX": 0,
+                "sY": 0,
+                "width": 64,
+                "height": 64
+            },
+            {
+                "sX": 64,
+                "sY": 0,
+                "width": 64,
+                "height": 64
+            },
+            {
+                "sX": 128,
+                "sY": 0,
+                "width": 64,
+                "height": 64
+            },
+            {
+                "sX": 192,
+                "sY": 0,
+                "width": 64,
+                "height": 64
+            },
+            {
+                "sX": 256,
+                "sY": 0,
+                "width": 64,
+                "height": 64
+            },
+            {
+                "sX": 0,
+                "sY": 64,
+                "width": 64,
+                "height": 64
+            },
+            {
+                "sX": 0,
+                "sY": 128,
+                "width": 64,
+                "height": 64
+            },
+            {
+                "sX": 0,
+                "sY": 192,
+                "width": 64,
+                "height": 64
+            },
+            {
+                "sX": 0,
+                "sY": 256,
+                "width": 64,
+                "height": 64
+            }
+        ]
+    }
+}
