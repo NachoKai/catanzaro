@@ -17,8 +17,10 @@ class Engine {
         this.user = {
             pos: {
                 x: 1,
-                y: 2
-            }
+                y: 3
+            },
+            fx: "healing",
+            frameFxCounter: 0
         };
 
         this.sizeTile = 32;
@@ -99,21 +101,22 @@ class Engine {
     }
 
     async loadMap() {
-        // https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/
-        // "/maps/city.json"
-        const response = await fetch("https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/city.json");
+        //"https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/city.json"
+        //"/maps/city.json"
+        const response = await fetch("/maps/city.json");
         const result = await response.json();
 
         this.map = result;
     }
 
     async loadAnimations() {
-        const response = await fetch("https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/animations/animations.json");
+        //"https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/animations/animations.json"
+        //"/animations/animations.json"
+        const response = await fetch("/animations/animations.json");
         const result = await response.json();
 
         this.animations = result;
     }
-
 
     async loadImages() {
         for (let nameUrl in this.urls) {
@@ -202,9 +205,9 @@ class Engine {
             }
         }
 
-        this.ctx.foreground.font = "7pt Helvetica";
+        this.ctx.foreground.font = "10pt Helvetica";
         this.ctx.foreground.fillStyle = "white";
-        this.ctx.foreground.fillText(`FPS: ${this.FPS}`, 5, 12);
+        this.ctx.foreground.fillText(`FPS: ${this.FPS}`, 5, 15);
     }
 
     renderCharacter() {
@@ -212,7 +215,38 @@ class Engine {
             this.images.character,
             this.user.pos.x * this.sizeTile,
             this.user.pos.y * this.sizeTile - 32
-        )
+        );
+
+        if (this.user.fx) {
+            const animation = this.animations[this.user.fx];
+
+            if (typeof this.user.frameFxCounter === "undefined") {
+                this.user.frameFxCounter = 0;
+            }
+
+            this.user.frameFxCounter += this.delta / animation.speed;
+
+            let frameFxCounter = Math.floor(this.user.frameFxCounter);
+
+            if (frameFxCounter >= animation.frames.length) {
+                this.user.frameFxCounter = 0;
+                frameFxCounter = 0;
+            }
+
+            const frame = animation.frames[frameFxCounter];
+
+            this.ctx.foreground.drawImage(
+                this.images[this.user.fx],
+                frame.sX,
+                frame.sY,
+                frame.width,
+                frame.height,
+                this.user.pos.x * this.sizeTile + animation.offset.x,
+                this.user.pos.y * this.sizeTile + animation.offset.y,
+                frame.width,
+                frame.height
+            );
+        }
     }
 
     clearCanvas() {
@@ -258,17 +292,17 @@ class Engine {
                 default:
                     break;
             }
-        })
+        });
     }
 }
 
-const background = document.getElementById("background")
-const foreground = document.getElementById("foreground")
+const background = document.getElementById("background");
+const foreground = document.getElementById("foreground");
 
 const context = {
     background: background.getContext("2d"),
     foreground: foreground.getContext("2d")
-}
+};
 
-const engine = new Engine(context)
-engine.initialize()
+const engine = new Engine(context);
+engine.initialize();

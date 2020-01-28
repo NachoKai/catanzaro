@@ -111,6 +111,10 @@
     },
     "healing": {
         "speed": 85,
+        "offset": {
+            "x": -60,
+            "y": -110
+        },
         "frames": [{
                 "sX": 0,
                 "sY": 0,
