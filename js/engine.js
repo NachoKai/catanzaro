@@ -42,7 +42,7 @@ class Engine {
         this.framesPerSecCounter = 0;
         this.delta = 0;
         this.lastDelta = 0;
-        this.debug = true; //false para sacar los puntos rojos
+        this.debug = false; //false para sacar los puntos rojos
         this.mapsToLoad = ["home", "forest", "coast"];
         this.maps = {};
     }
