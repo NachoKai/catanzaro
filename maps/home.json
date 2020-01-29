@@ -27,7 +27,12 @@
             "background": "grass"
         },
         {
-            "background": "grass"
+            "background": "grass",
+            "tileExit": {
+                "x": 1,
+                "y": 0,
+                "map": "forest"
+            }
         }
     ],
     [{

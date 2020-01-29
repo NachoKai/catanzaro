@@ -131,10 +131,23 @@ class Engine {
         }
     }
 
+    clearCanvasBackground() {
+        this.ctx.background.clearRect(
+            0,
+            0,
+            this.mapSize.x * this.sizeTile,
+            this.mapSize.y * this.sizeTile
+        );
+    }
+
     async renderMap() {
+
+        this.clearCanvasBackground();
+        const userMap = this.user.map;
+
         for (let y = 0; y <= this.mapSize.y - 1; y++) {
             for (let x = 0; x <= this.mapSize.x - 1; x++) {
-                const tile = this.map[y][x];
+                const tile = this.maps[userMap][y][x];
 
                 this.ctx.background.drawImage(
                     this.images[tile.background],
@@ -280,6 +293,21 @@ class Engine {
         );
     }
 
+    checkTileExit() {
+        const {
+            map,
+            pos
+        } = this.user;
+        const tile = this.maps[map][pos.y][pos.x];
+
+        if (tile.tileExit) {
+            this.user.map = tile.tileExit.map;
+            this.user.pos.x = tile.tileExit.x;
+            this.user.pos.y = tile.tileExit.y;
+            this.renderMap();
+        }
+    }
+
     initializeKeys() {
         document.addEventListener("keydown", e => {
             switch (e.keyCode) {
@@ -314,6 +342,8 @@ class Engine {
                 default:
                     break;
             }
+
+            this.checkTileExit();
         });
     }
 }
