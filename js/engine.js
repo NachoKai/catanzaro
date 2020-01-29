@@ -16,8 +16,9 @@ class Engine {
                 x: 1,
                 y: 3
             },
-            fx: "healing",
-            frameFxCounter: 0
+            // fx: "healing",
+            frameFxCounter: 0,
+            map: "home"
         };
         this.sizeTile = 32;
         this.urls = {
@@ -41,6 +42,8 @@ class Engine {
         this.delta = 0;
         this.lastDelta = 0;
         this.debug = true; //false para sacar los puntos rojos
+        this.mapsToLoad = ["home", "forest"];
+        this.maps = {};
     }
 
     async initialize() {
