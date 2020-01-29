@@ -98,9 +98,9 @@ class Engine {
     }
 
     async loadMap() {
-        //"https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/city.json"
-        //"/maps/city.json"
-        const response = await fetch("/maps/city.json");
+        //"https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/home.json"
+        //"/maps/home.json"
+        const response = await fetch("/maps/home.json");
         const result = await response.json();
 
         this.map = result;
