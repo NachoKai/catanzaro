@@ -212,5 +212,57 @@
                 "height": 145
             }
         ]
+    },
+    "portal": {
+        "speed": 90,
+        "frames": [{
+                "sX": 2,
+                "sY": 0,
+                "width": 41,
+                "height": 64
+            },
+            {
+                "sX": 44,
+                "sY": 0,
+                "width": 41,
+                "height": 64
+            },
+            {
+                "sX": 87,
+                "sY": 0,
+                "width": 41,
+                "height": 64
+            },
+            {
+                "sX": 129,
+                "sY": 0,
+                "width": 41,
+                "height": 64
+            },
+            {
+                "sX": 171,
+                "sY": 0,
+                "width": 41,
+                "height": 64
+            },
+            {
+                "sX": 214,
+                "sY": 0,
+                "width": 41,
+                "height": 64
+            },
+            {
+                "sX": 257,
+                "sY": 0,
+                "width": 41,
+                "height": 64
+            },
+            {
+                "sX": 299,
+                "sY": 0,
+                "width": 41,
+                "height": 64
+            }
+        ]
     }
 }

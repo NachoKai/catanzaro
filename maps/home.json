@@ -66,7 +66,12 @@
         },
         {
             "background": "grass",
-            "animation": "torch"
+            "animation": "torch",
+            "tileExit": {
+                "x": 1,
+                "y": 1,
+                "map": "forest"
+            }
         }
     ],
     [{
@@ -98,7 +103,12 @@
             "background": "grass"
         },
         {
-            "background": "grass"
+            "background": "grass",
+            "tileExit": {
+                "x": 1,
+                "y": 2,
+                "map": "forest"
+            }
         }
     ],
     [{
@@ -129,7 +139,12 @@
             "background": "grass"
         },
         {
-            "background": "grass"
+            "background": "grass",
+            "tileExit": {
+                "x": 1,
+                "y": 3,
+                "map": "forest"
+            }
         }
     ],
     [{
@@ -161,7 +176,12 @@
             "background": "grass"
         },
         {
-            "background": "grass"
+            "background": "grass",
+            "tileExit": {
+                "x": 1,
+                "y": 4,
+                "map": "forest"
+            }
         }
     ],
     [{
@@ -195,7 +215,12 @@
             "background": "grass"
         },
         {
-            "background": "grass"
+            "background": "grass",
+            "tileExit": {
+                "x": 1,
+                "y": 5,
+                "map": "forest"
+            }
         }
     ],
     [{
@@ -217,7 +242,8 @@
             "background": "grass"
         },
         {
-            "background": "grass"
+            "background": "grass",
+            "animation": "portal"
         },
         {
             "background": "grass"
@@ -226,7 +252,12 @@
             "background": "grass"
         },
         {
-            "background": "grass"
+            "background": "grass",
+            "tileExit": {
+                "x": 1,
+                "y": 6,
+                "map": "forest"
+            }
         }
     ],
     [{
@@ -248,7 +279,12 @@
             "background": "grass"
         },
         {
-            "background": "grass"
+            "background": "grass",
+            "tileExit": {
+                "x": 1,
+                "y": 7,
+                "map": "coast"
+            }
         },
         {
             "background": "grass"
@@ -257,7 +293,12 @@
             "background": "grass"
         },
         {
-            "background": "grass"
+            "background": "grass",
+            "tileExit": {
+                "x": 1,
+                "y": 7,
+                "map": "forest"
+            }
         }
     ],
     [{

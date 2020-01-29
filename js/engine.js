@@ -31,7 +31,8 @@ class Engine {
             torch: "./images/torch.png",
             healing: "./images/healing.png",
             exit: "./images/exit.png",
-            blocked: "./images/blocked.png"
+            blocked: "./images/blocked.png",
+            portal: "./images/portal.png",
         };
         this.images = {};
         this.animations = {};
@@ -42,7 +43,7 @@ class Engine {
         this.delta = 0;
         this.lastDelta = 0;
         this.debug = true; //false para sacar los puntos rojos
-        this.mapsToLoad = ["home", "forest"];
+        this.mapsToLoad = ["home", "forest", "coast"];
         this.maps = {};
     }
 
@@ -177,9 +178,11 @@ class Engine {
     }
 
     renderAnimation() {
+        const userMap = this.user.map;
+
         for (let y = 0; y <= this.mapSize.y - 1; y++) {
             for (let x = 0; x <= this.mapSize.x - 1; x++) {
-                const tile = this.map[y][x];
+                const tile = this.maps[userMap][y][x];
 
                 if (tile.animation) {
                     const animation = this.animations[tile.animation];
@@ -216,9 +219,10 @@ class Engine {
     }
 
     renderEnvironment() {
+        const userMap = this.user.map;
         for (let y = 0; y <= this.mapSize.y - 1; y++) {
             for (let x = 0; x <= this.mapSize.x - 1; x++) {
-                const tile = this.map[y][x];
+                const tile = this.maps[userMap][y][x];
 
                 if (tile.foreground) {
                     this.ctx.foreground.drawImage(
@@ -243,6 +247,11 @@ class Engine {
         this.ctx.foreground.font = "10pt Helvetica";
         this.ctx.foreground.fillStyle = "white";
         this.ctx.foreground.fillText(`FPS: ${this.FPS}`, 5, 15);
+        this.ctx.foreground.fillText(
+            `POS | X: ${this.user.pos.x} Y: ${this.user.pos.y}`,
+            60,
+            15
+        );
     }
 
     renderCharacter() {
@@ -310,31 +319,41 @@ class Engine {
 
     initializeKeys() {
         document.addEventListener("keydown", e => {
+            const userMap = this.user.map;
+
             switch (e.keyCode) {
                 case this.keys.arrowUp:
                     if (
-                        !this.map[this.user.pos.y - 1][this.user.pos.x].blocked
+                        !this.maps[userMap][this.user.pos.y - 1][
+                            this.user.pos.x
+                        ].blocked
                     ) {
                         this.user.pos.y--;
                     }
                     break;
                 case this.keys.arrowDown:
                     if (
-                        !this.map[this.user.pos.y + 1][this.user.pos.x].blocked
+                        !this.maps[userMap][this.user.pos.y + 1][
+                            this.user.pos.x
+                        ].blocked
                     ) {
                         this.user.pos.y++;
                     }
                     break;
                 case this.keys.arrowLeft:
                     if (
-                        !this.map[this.user.pos.y][this.user.pos.x - 1].blocked
+                        !this.maps[userMap][this.user.pos.y][
+                            this.user.pos.x - 1
+                        ].blocked
                     ) {
                         this.user.pos.x--;
                     }
                     break;
                 case this.keys.arrowRight:
                     if (
-                        !this.map[this.user.pos.y][this.user.pos.x + 1].blocked
+                        !this.maps[userMap][this.user.pos.y][
+                            this.user.pos.x + 1
+                        ].blocked
                     ) {
                         this.user.pos.x++;
                     }

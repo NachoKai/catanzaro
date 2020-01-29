@@ -4,40 +4,43 @@
             "tileExit": {
                 "x": 8,
                 "y": 0,
-                "map": "home"
+                "map": "forest"
             }
         },
         {
             "background": "grass"
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass",
-            "tileExit": {
-                "x": 1,
-                "y": 0,
-                "map": "coast"
-            }
+            "background": "water",
+            "blocked": true
         }
     ],
     [{
@@ -45,40 +48,43 @@
             "tileExit": {
                 "x": 8,
                 "y": 1,
-                "map": "home"
+                "map": "forest"
             }
         },
         {
             "background": "grass"
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass",
-            "tileExit": {
-                "x": 1,
-                "y": 1,
-                "map": "coast"
-            }
+            "background": "water",
+            "blocked": true
         }
     ],
     [{
@@ -86,40 +92,43 @@
             "tileExit": {
                 "x": 8,
                 "y": 2,
-                "map": "home"
+                "map": "forest"
             }
         },
         {
             "background": "grass"
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass",
-            "tileExit": {
-                "x": 1,
-                "y": 2,
-                "map": "coast"
-            }
+            "background": "water",
+            "blocked": true
         }
     ],
     [{
@@ -127,40 +136,43 @@
             "tileExit": {
                 "x": 8,
                 "y": 3,
-                "map": "home"
+                "map": "forest"
             }
         },
         {
             "background": "grass"
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass",
-            "tileExit": {
-                "x": 1,
-                "y": 3,
-                "map": "coast"
-            }
+            "background": "water",
+            "blocked": true
         }
     ],
     [{
@@ -168,40 +180,43 @@
             "tileExit": {
                 "x": 8,
                 "y": 4,
-                "map": "home"
+                "map": "forest"
             }
         },
         {
             "background": "grass"
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass",
-            "tileExit": {
-                "x": 1,
-                "y": 4,
-                "map": "coast"
-            }
+            "background": "water",
+            "blocked": true
         }
     ],
     [{
@@ -209,40 +224,43 @@
             "tileExit": {
                 "x": 8,
                 "y": 5,
-                "map": "home"
+                "map": "forest"
             }
         },
         {
             "background": "grass"
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass",
-            "tileExit": {
-                "x": 1,
-                "y": 5,
-                "map": "coast"
-            }
+            "background": "water",
+            "blocked": true
         }
     ],
     [{
@@ -250,40 +268,43 @@
             "tileExit": {
                 "x": 8,
                 "y": 6,
-                "map": "home"
+                "map": "forest"
             }
         },
         {
             "background": "grass"
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass",
-            "tileExit": {
-                "x": 1,
-                "y": 6,
-                "map": "coast"
-            }
+            "background": "water",
+            "blocked": true
         }
     ],
     [{
@@ -291,40 +312,43 @@
             "tileExit": {
                 "x": 8,
                 "y": 7,
-                "map": "home"
+                "map": "forest"
             }
         },
         {
             "background": "grass"
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass"
+            "background": "water",
+            "blocked": true
         },
         {
-            "background": "grass",
-            "tileExit": {
-                "x": 1,
-                "y": 7,
-                "map": "coast"
-            }
+            "background": "water",
+            "blocked": true
         }
     ],
     [{
