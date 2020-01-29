@@ -239,11 +239,11 @@
             "background": "grass"
         },
         {
-            "background": "grass"
-        },
-        {
             "background": "grass",
             "animation": "portal"
+        },
+        {
+            "background": "grass"
         },
         {
             "background": "grass"

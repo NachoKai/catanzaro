@@ -26,6 +26,7 @@ class Engine {
             character: "./images/character.png",
             poster: "./images/poster.png",
             tree: "./images/tree.png",
+            tree2: "./images/tree2.png",
             water: "./images/water.png",
             fireBall: "./images/fireBall.png",
             torch: "./images/torch.png",
@@ -34,6 +35,9 @@ class Engine {
             blocked: "./images/blocked.png",
             portal: "./images/portal.png",
             ship: "./images/ship.png",
+            tower: "./images/tower.png",
+            bush: "./images/bush.png",
+            rock: "./images/rock.png"
         };
         this.images = {};
         this.animations = {};
@@ -104,7 +108,7 @@ class Engine {
 
 
     async loadMap(map) {
-        const response = await fetch(`https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/${map}.json`);
+        const response = await fetch(`https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages//maps/${map}.json`);
         const result = await response.json();
         return result;
     }
@@ -118,7 +122,7 @@ class Engine {
     async loadAnimations() {
         //"https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/animations/animations.json"
         //"/animations/animations.json"
-        const response = await fetch("https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/animations/animations.json");
+        const response = await fetch("https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages//animations/animations.json");
         const result = await response.json();
 
         this.animations = result;
