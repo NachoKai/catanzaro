@@ -48,7 +48,7 @@ class Engine {
 
     async initialize() {
         const loadImages = this.loadImages();
-        const loadMaps = this.loadMap();
+        const loadMaps = this.loadMaps();
         const loadAnimations = this.loadAnimations();
 
         await Promise.all([loadImages, loadMaps, loadAnimations]);
