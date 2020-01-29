@@ -100,13 +100,17 @@ class Engine {
         });
     }
 
-    async loadMap() {
-        //"https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/home.json"
-        //"/maps/home.json"
-        const response = await fetch("/maps/home.json");
-        const result = await response.json();
 
-        this.map = result;
+    async loadMap(map) {
+        const response = await fetch(`/maps/${map}.json`);
+        const result = await response.json();
+        return result;
+    }
+
+    async loadMaps() {
+        this.mapsToLoad.map(async map => {
+            this.maps[map] = await this.loadMap(map);
+        });
     }
 
     async loadAnimations() {
