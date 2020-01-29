@@ -40,7 +40,7 @@ class Engine {
         this.framesPerSecCounter = 0;
         this.delta = 0;
         this.lastDelta = 0;
-        this.debug = true;
+        this.debug = true; //false para sacar los puntos rojos
     }
 
     async initialize() {
