@@ -12,7 +12,8 @@
         },
         {
             "background": "water",
-            "blocked": true
+            "blocked": true,
+            "foreground": "ship"
         },
         {
             "background": "water",

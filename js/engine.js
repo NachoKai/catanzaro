@@ -33,6 +33,7 @@ class Engine {
             exit: "./images/exit.png",
             blocked: "./images/blocked.png",
             portal: "./images/portal.png",
+            ship: "./images/ship.png",
         };
         this.images = {};
         this.animations = {};
@@ -103,7 +104,7 @@ class Engine {
 
 
     async loadMap(map) {
-        const response = await fetch(`/maps/${map}.json`);
+        const response = await fetch(`https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/${map}.json`);
         const result = await response.json();
         return result;
     }
