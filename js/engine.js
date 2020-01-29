@@ -1,19 +1,16 @@
 class Engine {
     constructor(context) {
         this.ctx = context;
-
         this.keys = {
             arrowUp: 38,
             arrowDown: 40,
             arrowLeft: 37,
             arrowRight: 39
         };
-
         this.mapSize = {
             x: 10,
             y: 10
         };
-
         this.user = {
             pos: {
                 x: 1,
@@ -22,9 +19,7 @@ class Engine {
             fx: "healing",
             frameFxCounter: 0
         };
-
         this.sizeTile = 32;
-
         this.urls = {
             grass: "./images/grass.png",
             character: "./images/character.png",
@@ -35,17 +30,15 @@ class Engine {
             torch: "./images/torch.png",
             healing: "./images/healing.png"
         };
-
         this.images = {};
         this.animations = {};
         this.map = [];
-
         this.FPS = 0;
         this.lFrameTimer = 0;
         this.framesPerSecCounter = 0;
-
         this.delta = 0;
         this.lastDelta = 0;
+        this.debug = true;
     }
 
     async initialize() {
