@@ -28,7 +28,9 @@ class Engine {
             water: "./images/water.png",
             fireBall: "./images/fireBall.png",
             torch: "./images/torch.png",
-            healing: "./images/healing.png"
+            healing: "./images/healing.png",
+            exit: "./images/exit.png",
+            blocked: "./images/blocked.png"
         };
         this.images = {};
         this.animations = {};
@@ -132,6 +134,24 @@ class Engine {
                     x * this.sizeTile,
                     y * this.sizeTile
                 );
+
+                if (this.debug) {
+                    if (tile.blocked) {
+                        this.ctx.background.drawImage(
+                            this.images.blocked,
+                            x * this.sizeTile,
+                            y * this.sizeTile
+                        );
+                    }
+
+                    if (tile.tileExit) {
+                        this.ctx.background.drawImage(
+                            this.images.exit,
+                            x * this.sizeTile,
+                            y * this.sizeTile
+                        );
+                    }
+                }
             }
         }
     }
