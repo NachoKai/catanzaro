@@ -106,6 +106,7 @@ class Engine {
         });
     }
 
+    //"https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/"
 
     async loadMap(map) {
         const response = await fetch(`https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/maps/${map}.json`);
@@ -120,8 +121,6 @@ class Engine {
     }
 
     async loadAnimations() {
-        //"https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/animations/animations.json"
-        //"/animations/animations.json"
         const response = await fetch("https://raw.githubusercontent.com/NachoKai/catanzaro/gh-pages/animations/animations.json");
         const result = await response.json();
 
